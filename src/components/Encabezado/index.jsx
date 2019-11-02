@@ -1,26 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Encabezado = function () {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a className="navbar-brand" href="#">Navbar</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarColor01">
+            <div className="collapse navbar-collapse" id="navbarColor01">
                  <ul className="navbar-nav mr-auto">
                       <li className="nav-item active">
-                        <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <Link className="nav-link" to="/Principal">Home <span className="sr-only">(current)</span></Link>
                       </li>
                       <li className="nav-item">
-                         <a className="nav-link" href="#">Features</a>
+                         <Link className="nav-link" to="/Pedidos">Pedidos</Link>
                     </li>
                     <li className="nav-item">
-                         <a className="nav-link" href="#">Pricing</a>
+                         <Link className="nav-link" to="/crear-pedido">Crear Pedido</Link>
                     </li>
-                    <li clasNames="nav-item">
-                        <a className="nav-link" href="#">About</a>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/About">About</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/Menu">Menu</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/Login">Login</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/AgregarPedido">AgregarPedido</Link>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
