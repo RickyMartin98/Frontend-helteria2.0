@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../helteria.svg';
 
 const Encabezado = function () {
+    const style= {
+        width: '50px',
+        height: '50px',
+        borderRadius: '30px'
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a className="navbar-brand" href="#">Navbar</a>
+            <Link className="navbar-brand" to="/"><img src={logo} style={style}/></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -30,7 +36,7 @@ const Encabezado = function () {
                         <Link className="nav-link" to="/Login">Login</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/AgregarPedido">AgregarPedido</Link>
+                        <Link className="nav-link" to="/AgregarElemento">AgregarElemento</Link>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">

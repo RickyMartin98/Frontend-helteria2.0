@@ -5,16 +5,17 @@ const Principal = function (params) {
 const [bebidas, setBebidas] = useState([]);
 
     useEffect( async () => {
-        const res = awat 'bebiddoc.id, data: doc.data()as'
-        db.collection('bebidas').get().then((snapShots) => {
+        console.log(db);
+      
+        /*db.collection('Bebidas').onSnapshot((snapShots) => {
             setBebidas(snapShots.docs.map(doc => {
                 return {id:doc.id, data: doc.data()}
             }));
         }),
         error => {
             console.log(error);
-        }
-    });
+        }*/
+    },[]);
 
     return (
         <div>

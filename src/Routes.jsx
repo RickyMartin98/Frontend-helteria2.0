@@ -8,6 +8,7 @@ import AgregarPedido from './components/AgregarPedido';
 /*import AgregarProducto from './components/AgregarProducto';*/
 import NotFound from './components/NotFound';
 import Pedidos from './components/Pedidos';
+import AgregarElemento from './components/AgregarElemento';
 const Routes = function () {
     return (
         <Router>
@@ -18,10 +19,9 @@ const Routes = function () {
                 <Route exact path="/AgregarPedido" render={() => <AgregarPedido /> } />
                 <Route exact path="/Menu" render={() => <Menu /> } />
                 <Route exact path="/About" render={() => <AgregarPedido /> } />
-                <Route exact path="/AgregarProducto" render={() => <AgregarPedido /> } />
+                <Route exact path="/AgregarElemento" render={() => <AgregarElemento /> } />
                 <Route exact path="/Blog" render={() => <AgregarPedido /> } />
                 <Route exact path="/Pedidos" render={() => <Pedidos /> } />
-                <Route exact path="/AgregarPedido" render={() => <AgregarPedido /> } />
                 <Route component={NotFound} />
             </Switch>
         </Router>
