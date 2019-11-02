@@ -26,6 +26,7 @@ const Login = function (props) {
 }
 
 const firebaseAppAuth = firebaseApp.auth();
+
 const providers  = {
     googleProvider: new firebase.auth.GoogleAuthProvider()   
 };
