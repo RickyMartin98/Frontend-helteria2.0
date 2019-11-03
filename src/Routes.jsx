@@ -9,12 +9,19 @@ import AgregarPedido from './components/AgregarPedido';
 import NotFound from './components/NotFound';
 import Pedidos from './components/Pedidos';
 import AgregarElemento from './components/AgregarElemento';
+import IndexLogin from './components/IndexLogin'
+
+
 const Routes = function () {
     const [is_logged, setid_logged] = useState(false);
     return (
         <Router>
             <Encabezado />
             <Switch>
+                <Route exact path="/" render={() => <IndexLogin />} />
+                <Route exact path="/Login" render={() => <Login />}/>
+                <Route exact path="/Principal" render={() => <Principal />} />
+                <Route exact path="/AgregarPedido" render={() => <AgregarPedido /> } />
                 <Route exact path="/" render={() =>(
                     is_logged ? <Redirect from="/" to="/Menu" />
                     : <Login />)} />

@@ -29,8 +29,7 @@ const Login = function (props) {
         }
     }*/
     return (
-       
-       <div>
+
         {
                 user ? <div><p>Hello, {user.displayName}</p> </div>
                 :<p>please , sign in</p>
