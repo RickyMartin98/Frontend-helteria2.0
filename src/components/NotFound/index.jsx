@@ -2,11 +2,13 @@ import React from 'react';
 
 const NotFound = function () {
     const font = {
-        fontSize: "100px",
-        height: "500px"
+        fontSize: "50px",
+        height: "100%"
     }
     return (
-        <p className="alert-warning" style={font}>Wooops!! this page doesn't exist :(</p>
+       <div>
+            <p className="alert-warning" style={font}>Wooops!! this page doesn't exist :(</p> 
+       </div>
     );
 }
 export default NotFound;

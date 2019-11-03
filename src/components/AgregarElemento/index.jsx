@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import swal from 'sweetalert2';
 
 import firebase from '../../firebase';
 
 const AgregarElemento = function () {
     console.log("Este es firebase ",firebase);
     const styleForm = {
-        width: '300px'
+        width: '300px',
+        display: 'flex',
+        justifyConten: 'center',
+        alignItems: 'center',
     }
 
     const [platillo, setPlatillo] = useState({nombre: '', precio: 0,descripcion:''});
@@ -29,7 +33,12 @@ const AgregarElemento = function () {
             precio: platillo.precio,
             descripcion: platillo.descripcion
         },function () {
-            alert("Se ha registrador correctamente");
+            //alert("Se ha registrador correctamente");
+            swal.fire({
+                title:'Agregado!',
+                text: 'Tu item ha sido agregado correctamente',
+                type: 'succsess'
+            });
         })
         
     }
@@ -37,7 +46,7 @@ const AgregarElemento = function () {
 
     const { nombre, precio, descripcion } = platillo;
     return( 
-
+    <div className="container-fluid">
         <form onSubmit={onSubimit} style={styleForm}>
         <fieldset>
           <legend>Agregar Elemento</legend>
@@ -46,7 +55,7 @@ const AgregarElemento = function () {
                 <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="nombre" placeholder="Enter Nombre" onChange={getValues} value={nombre} />
           </div>
           <div className="form-group">
-            <label className="control-label">Input addons</label>
+            <label className="control-label">Precio</label>
                 <div className="form-group">
                     <div className="input-group mb-3">
                          <div className="input-group-prepend">
@@ -66,6 +75,7 @@ const AgregarElemento = function () {
           <button type="submit" className="btn btn-primary">Agregar</button>
         </fieldset>
       </form>
+    </div>
     );
 }
 
