@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import * as firebase from 'firebase/app';
-import config from '../../firebase';
+
+import firebase from '../../firebase';
 
 const AgregarElemento = function () {
-    console.log(firebase);
+    console.log("Este es firebase ",firebase);
+    const styleForm = {
+        width: '300px'
+    }
+
     const [platillo, setPlatillo] = useState({nombre: '', precio: 0,descripcion:''});
     const getValues = (e) => {
             console.log([e.target.name],e.target.value);
@@ -16,33 +20,29 @@ const AgregarElemento = function () {
     }
 
     const enviarDatos = () => {
-        console.log(config);
-        
-        console.log(firebase);
-       // firebase.initializeApp(config);
+        alert("Entro");
+        var database = firebase.database();
+        var referencia = database.ref("Bebida");
 
-       // console.log("Firebase: ",firebase);
-       // var basedatos = firebase.database();
-         //var referencia = basedatos.ref("Bebida");
-        /* referencia.push({
+        referencia.push({
             nombre: platillo.nombre,
             precio: platillo.precio,
-            descripcion: platillo.decripcion
-         }, function () {
-            console.log("Guardado exitosamente");
-         });*/
-           
+            descripcion: platillo.descripcion
+        },function () {
+            alert("Se ha registrador correctamente");
+        })
+        
     }
 
 
     const { nombre, precio, descripcion } = platillo;
     return( 
 
-        <form onSubmit={enviarDatos}>
+        <form onSubmit={onSubimit} style={styleForm}>
         <fieldset>
           <legend>Agregar Elemento</legend>
           <div className="form-group">
-                <label for="exampleInputEmail1">Nombre platillo</label>
+                <label>Nombre platillo</label>
                 <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="nombre" placeholder="Enter Nombre" onChange={getValues} value={nombre} />
           </div>
           <div className="form-group">
@@ -60,7 +60,7 @@ const AgregarElemento = function () {
                 </div>
             </div>
             <div className="form-group">
-              <label for="exampleInputPassword1">Descripcion </label>
+              <label >Descripcion </label>
               <textarea className="form-control" name="descripcion" onChange={getValues} value={descripcion}></textarea>
           </div>
           <button type="submit" className="btn btn-primary">Agregar</button>

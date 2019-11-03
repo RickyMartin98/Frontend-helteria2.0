@@ -2,10 +2,10 @@ import React from 'react';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import config from '../../firebase';
+/*import firebaseConfig from '../../firebase';*/
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-
+/*const firebaseApp = firebase.initializeApp(firebaseConfig);*/
+import firebaseApp from '../../firebase';
 
 const Login = function (props) {
     const { user , signOut, signInWithGoogle } = props;
