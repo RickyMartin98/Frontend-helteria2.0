@@ -17,14 +17,6 @@ const Login = function (props) {
         <p>
           Bienvenido a Helteria, Continua saludable
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         {
                 user ? <p>Hello, {user.displayName}</p>
                 :<p>please , sign in</p>
