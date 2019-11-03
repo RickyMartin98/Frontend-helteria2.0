@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import withFirebaseAuth from 'react-with-firebase-auth';
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase/app'; 
 import 'firebase/auth';
 import { Redirect } from 'react-router-dom';
 /*import firebaseConfig from '../../firebase';*/
@@ -29,23 +29,15 @@ const Login = function (props) {
         }
     }*/
     return (
-        <div>
-              <header className="App-header">
-        
-        <p>
-          Bienvenido a Helteria, Continua saludable
-        </p>
 
         {
-                user ? <div><p>Hello, {user.displayName}</p> <Redirect to="/Principal"/></div>
+                user ? <div><p>Hello, {user.displayName}</p> </div>
                 :<p>please , sign in</p>
             }
             {
-                user ? <button onClick={signOut} >Sign out</button>
-                : <button onClick={signInWithGoogle}>Sign in with Google</button>
+                user ? <button className="btn btn-danger" onClick={signOut} >Sign out</button>
+                : <button onClick={signInWithGoogle} className="btn btn-dark">Sign in with Google</button>
             }
-
-        </header>
            
         </div>
     );

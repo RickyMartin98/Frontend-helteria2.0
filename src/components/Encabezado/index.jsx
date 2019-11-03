@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../helteria.svg';
+import withFirebaseAuth from 'react-with-firebase-auth';
+import firebaseApp from '../../firebase';
+import Login from '../Login';
 
 const Encabezado = function () {
     const style= {
@@ -29,7 +32,7 @@ const Encabezado = function () {
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
                    
-                    <button className="btn btn-warning my-2 my-sm-0" type="submit"><Link className="nav-link" to="/Login">Login</Link></button>
+                    <Login />
                 </form>
             </div>
         </nav>
