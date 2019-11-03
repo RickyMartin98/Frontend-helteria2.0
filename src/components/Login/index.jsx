@@ -19,7 +19,7 @@ const Login = function (props) {
     }
     /*const renderIsLoged = () => {
         if (user) {
-            return (
+            return (g
                 <div>
                     <img src={user.photoURL} alt={user.displayName}></img>
                     <p>Hola, Bienvenid@ {user.displayName}</p>
@@ -29,11 +29,12 @@ const Login = function (props) {
         }
     }*/
     return (
-
+       
+       <div>
         {
                 user ? <div><p>Hello, {user.displayName}</p> </div>
                 :<p>please , sign in</p>
-            }
+            },
             {
                 user ? <button className="btn btn-danger" onClick={signOut} >Sign out</button>
                 : <button onClick={signInWithGoogle} className="btn btn-dark">Sign in with Google</button>
