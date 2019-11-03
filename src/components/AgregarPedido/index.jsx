@@ -2,25 +2,21 @@ import React from 'react';
 
 const AgregarPedido = function () {
     return(
-        <div className="modal">
-            <div className="modal-dialog" role="document">
-                <div className="modal-content">
-                     <div className="modal-header">
-                        <h5 className="modal-title">Modal title</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+            <form>
+                <fieldset>
+                    <legend>Legend</legend>
+                    <div className="form-group">
+                        <label>Email address</label>
+                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
                     </div>
-                    <div className="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-primary">Save changes</button>
-                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+                    </div>      
+                    <button type="button" className="btn btn-primary">Save changes</button>
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+            </fieldset>
+        </form>
     );
 }
 

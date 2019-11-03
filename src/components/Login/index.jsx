@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useState} from 'react';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
+import { Redirect } from 'react-router-dom';
 /*import firebaseConfig from '../../firebase';*/
 
 /*const firebaseApp = firebase.initializeApp(firebaseConfig);*/
 import firebaseApp from '../../firebase';
 
 const Login = function (props) {
+
+   
+
     const { user , signOut, signInWithGoogle } = props;
 
+    const handleOut = () => {
+
+    }
+    /*const renderIsLoged = () => {
+        if (user) {
+            return (
+                <div>
+                    <img src={user.photoURL} alt={user.displayName}></img>
+                    <p>Hola, Bienvenid@ {user.displayName}</p>
+                    <button onClick={handleOut} >Salir</button>
+                </div>
+            );
+        }
+    }*/
     return (
         <div>
               <header className="App-header">
@@ -17,16 +35,9 @@ const Login = function (props) {
         <p>
           Bienvenido a Helteria, Continua saludable
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       
         {
-                user ? <p>Hello, {user.displayName}</p>
+                user ? <div><p>Hello, {user.displayName}</p> <Redirect to="/Principal"/></div>
                 :<p>please , sign in</p>
             }
             {
@@ -46,6 +57,7 @@ const firebaseAppAuth = firebaseApp.auth();
 const providers  = {
     googleProvider: new firebase.auth.GoogleAuthProvider()   
 };
+
 
 export default withFirebaseAuth({
     providers,

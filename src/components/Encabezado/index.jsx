@@ -17,31 +17,19 @@ const Encabezado = function () {
 
             <div className="collapse navbar-collapse" id="navbarColor01">
                  <ul className="navbar-nav mr-auto">
-                      <li className="nav-item active">
-                        <Link className="nav-link" to="/Principal">Home <span className="sr-only">(current)</span></Link>
-                      </li>
-                      <li className="nav-item">
-                         <Link className="nav-link" to="/Pedidos">Pedidos</Link>
-                    </li>
-                    <li className="nav-item">
-                         <Link className="nav-link" to="/crear-pedido">Crear Pedido</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/About">About</Link>
-                    </li>
-                    <li className="nav-item">
+                 <li className="nav-item">
                         <Link className="nav-link" to="/Menu">Menu</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/Login">Login</Link>
+                         <Link className="nav-link" to="/Pedidos">Pedidos</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/AgregarElemento">AgregarElemento</Link>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-                    <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                   
+                    <button className="btn btn-warning my-2 my-sm-0" type="submit"><Link className="nav-link" to="/Login">Login</Link></button>
                 </form>
             </div>
         </nav>
